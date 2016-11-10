@@ -129,5 +129,13 @@ cat3.products.create!({
   price: 2_483.75
 })
 
+User.create!({
+  first_name: 'Mike',
+  last_name: 'Jenkins',
+  email: 'kinetic@icloud.com',
+  administrator: 'true',
+  password_digest: ''
+  })
+
 
 puts "DONE!"
