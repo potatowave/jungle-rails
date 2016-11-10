@@ -134,7 +134,7 @@ User.create!({
   last_name: 'Jenkins',
   email: 'kinetic@icloud.com',
   administrator: 'true',
-  password_digest: ''
+  password_digest: 'dog'
   })
 
 
