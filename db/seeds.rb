@@ -137,5 +137,55 @@ User.create!({
   password_digest: 'dog'
   })
 
+User.create!({
+  first_name: 'Elon',
+  last_name: 'Musk',
+  email: 'elon@tesla.com',
+  administrator: 'false',
+  password_digest: 'elon'
+  })
+
+User.create!({
+  first_name: 'Donald',
+  last_name: 'Trump',
+  email: 'donald@trump.com',
+  administrator: 'true',
+  password_digest: 'trump'
+  })
+
+Review.create!({
+  product_id: 1,
+  user_id: 1,
+  description: Faker::Hipster.paragraph(2),
+  rating: 3
+  })
+
+Review.create!({
+  product_id: 2,
+  user_id: 2,
+  description: Faker::Hipster.paragraph(2),
+  rating: 5
+  })
+
+Review.create!({
+  product_id: 4,
+  user_id: 3,
+  description: Faker::Hipster.paragraph(2),
+  rating: 1
+  })
+
+Review.create!({
+  product_id: 1,
+  user_id: 2,
+  description: Faker::Hipster.paragraph(2),
+  rating: 3
+  })
+
+Review.create!({
+  product_id: 3,
+  user_id: 1,
+  description: Faker::Hipster.paragraph(2),
+  rating: 2
+  })
 
 puts "DONE!"
