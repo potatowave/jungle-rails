@@ -4,11 +4,28 @@
       <%= image_tag product.image.thumb, alt: product.name %>
       <h4><%= product.name %></h4>
     <% end %>
+      <% rating_collection = Array.new %>
+  <% product.reviews.map do |review| %>
+    <% rating_collection << review.rating %>
+  <% end %>
+
+  <% rating_average = rating_collection.inject{ |sum, el| sum + el }.to_f / rating_collection.size %>
+
+  <% if !rating_average.nan? %>
+
+    <p><% for star in 1..rating_average do %>
+      <span class="glyphicon glyphicon-star"></span>
+    <% end %>
+
+  <% end %><br>
   </header>
+
   <p class="description">
     <%= product.description %>
   </p>
+
   <footer class="actions">
+
     <%= link_to add_item_cart_path(product_id: product.id), class: 'btn btn-primary', method: :put do %>
       <%= fa_icon "shopping-cart", text: 'Add' %>
     <% end %>
